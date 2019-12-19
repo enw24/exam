@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+{% extends "navbar.html" %}
+{% load static %}
+<title>{{ jewelery.info.name }}</title>
+{% block content %}
+<img src="{{ jewelery.info.image.url }}" alt="" style="width:70%">
+<br />
+{{ jewelery.info.name }}
+<br />
+<a href="{{ jewelery.info.url }}">{{ jewelery.info.brand }} </a>
+<br />
+${{ jewelery.info.price }}
+<br />
+Size: {{ jewelery.size }}
+{% endblock %}

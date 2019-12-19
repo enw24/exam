@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<title>{{ vehicle.info.name }}</title>
+<img src="{{ vehicle.info.image.url }}" alt="" style="width:70%">
+<br />
+{{ vehicle.info.name }}
+<br />
+<a href="{{ vehicle.info.url }}">{{ vehicle.info.brand }} </a>
+<br />
+${{ vehicle.info.price }}
+<br />
+Size: {{ vehicle.size }}

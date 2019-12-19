@@ -1,10 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends "navbar.html" %}
+{% load static %}
 
-</body>
-</html>
+
+<head>
+</head>
+<title>Vehicles</title>
+{% block content %}
+{% for i in vehicle_list %}
+  <img src="{{ i.info.image.url }}" alt="" style="width:70%">
+  <h3><b><a class="btn btn-link"href="{% url 'vehicle_detail' i.pk %}" role="button">{{ i.info.name }}</a></b></h3>
+    <p>${{ i.info.price }}</p>
+{% endfor %}
+{% endblock %}

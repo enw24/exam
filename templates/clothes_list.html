@@ -1,0 +1,13 @@
+{% extends "navbar.html" %}
+{% load static %}
+
+<head>
+</head>
+<title>Clothes</title>
+{% block content %}
+{% for i in clothes_list %}
+  <img src="{{ i.info.image.url }}" alt="" style="width:70%">
+  <h3><b><a class="btn btn-link"href="{% url 'clothes_detail' i.pk %}" role="button">{{ i.info.name }}</a></b></h3>
+    <p>${{ i.info.price }}</p>
+{% endfor %}
+{% endblock %}

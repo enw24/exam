@@ -3,6 +3,27 @@ from django.views.generic import ListView, DetailView, TemplateView
 
 from giftlistapp.models import Clothes, Jewelery, Vehicle, Pet, Other
 
+from django.http import HttpResponse
+from django.shortcuts import render, redirect
+from .forms import *
+
+
+# Create your views here.
+def hotel_image_view(request):
+    if request.method == 'POST':
+        form = Form(request.POST, request.FILES)
+
+        if form.is_valid():
+            form.save()
+            return redirect('success')
+    else:
+        form = Form()
+    return render(request, 'clothes_list.html', {'form': form})
+
+
+def success(request):
+    return HttpResponse('successfully uploaded')
+
 
 class ClothesList(ListView):
     model=Clothes
