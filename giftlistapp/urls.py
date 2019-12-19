@@ -1,6 +1,7 @@
 from giftlistapp import admin
 from django.urls import path
-from giftlistapp.views import ClothesList, ClothesDetail, VehicleList, VehicleDetail, JeweleryList, JeweleryDetail, PetList, PetDetail, OtherList, OtherDetail, Homepage
+from giftlistapp.views import ClothesList, ClothesDetail, VehicleList, VehicleDetail, JeweleryList, JeweleryDetail, \
+    PetList, PetDetail, OtherList, OtherDetail, Homepage, CreatePurchaseList
 
 urlpatterns = [
     path('', Homepage.as_view(), name="homepage"),
@@ -14,5 +15,6 @@ urlpatterns = [
     path('pet/<int:pk>/', PetDetail.as_view(), name='pet_detail'),
     path('other/', OtherList.as_view(), name="other_list"),
     path('other/<int:pk>/', OtherDetail.as_view(), name='other_detail'),
+    path('shop/<int:pk>/', CreatePurchaseList.as_view(), name='purchased'),
 
 ]

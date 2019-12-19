@@ -32,3 +32,7 @@ class Pet(models.Model):
 class Other(models.Model):
     info = models.ForeignKey(Product, on_delete=models.CASCADE)
 
+class Purchased(models.Model):
+    info=models.ForeignKey(Product, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.info

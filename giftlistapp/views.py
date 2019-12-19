@@ -1,5 +1,6 @@
 from django.shortcuts import render
-from django.views.generic import ListView, DetailView, TemplateView
+from django.urls import reverse_lazy
+from django.views.generic import ListView, DetailView, TemplateView, CreateView
 
 from giftlistapp.models import Clothes, Jewelery, Vehicle, Pet, Other
 
@@ -75,3 +76,9 @@ class OtherDetail(DetailView):
 
 class Homepage(TemplateView):
     template_name = "home.html"
+
+class CreatePurchaseList(CreateView):
+    model = Purchased
+    template_name = "purchased.html"
+    success_url = reverse_lazy("homepage")
+    fields = ['info']

@@ -1,4 +1,7 @@
+{% extends "navbar.html" %}
+{% load static %}
 <title>{{ vehicle.info.name }}</title>
+{% block content %}
 <img src="{{ vehicle.info.image.url }}" alt="" style="width:70%">
 <br />
 {{ vehicle.info.name }}
@@ -7,4 +10,5 @@
 <br />
 ${{ vehicle.info.price }}
 <br />
-Size: {{ vehicle.size }}
+Color: {{ vehicle.color }}
+{% endblock %}

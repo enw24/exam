@@ -9,5 +9,7 @@
   <img src="{{ i.info.image.url }}" alt="" style="width:70%">
   <h3><b><a class="btn btn-link"href="{% url 'clothes_detail' i.pk %}" role="button">{{ i.info.name }}</a></b></h3>
     <p>${{ i.info.price }}</p>
+    <h3><b><a class="btn btn-link"href="{% url 'purchased' i.pk %}" role="button">Add to My List</a></b></h3>
+
 {% endfor %}
 {% endblock %}
