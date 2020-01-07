@@ -1,0 +1,2 @@
+terminal-->pip install pillow
+
